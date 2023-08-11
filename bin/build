@@ -1,0 +1,16 @@
+#! /usr/bin/env bash
+
+dir=$1
+exec=$dir/$2
+shift
+shift
+files=()
+
+for f in ${@}; do
+  files+="$dir/$f"
+done
+
+clang -o $exec ${files[@]}
+# clang -std=c17 -Werror -Wall -Wextra -o $exec ${files[@]}
+chmod +x $exec
+

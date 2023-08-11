@@ -1,0 +1,14 @@
+#! /usr/bin/env bash
+
+bin=$(dirname $0)
+dir=$1
+exec=$dir/$2
+
+$bin/build $@
+
+echo
+echo ==============
+echo
+
+$exec
+
